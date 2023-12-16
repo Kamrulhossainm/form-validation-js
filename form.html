@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Form Validation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form{
+            width: 400px;
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 7px;
+        }
+        form h2 {
+            text-align: center;
+            font-family: monospace;
+            margin: 10px 0 15px 0;
+        }
+        form input{
+            width: 100%;
+            padding: 7px;
+            margin-bottom: 10px;
+            display: block;
+            outline: none;
+        }
+        form textarea{
+            min-width: 100%;
+            max-width: 100%;
+            padding: 7px;
+            min-height: 100px;
+            max-height: 100px;
+            outline: none;
+        }
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 7px;
+            outline: none;
+            cursor: pointer;
+        }
+        button {
+            outline: none;
+            width: 100%;
+            padding: 7px;
+            margin-top: 10px;
+            background: dodgerblue;
+            border: none;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 1px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" id="form">
+            <h2>Register</h2>
+            <input type="text" name="fName" placeholder="Enter your name" id="" required>
+            <input type="email" name="email" placeholder="Enter your email" id="" required>
+            <input type="password" name="password" placeholder="Enter your password" id="" required>
+            <select name="country" id="" required>
+                <option value="" selected>Select your country</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="India">India</option>
+                <option value="Srilanka">Srilanka</option>
+                <option value="Afganistan">Afganistan</option>
+            </select>
+            <textarea name="address" id="" placeholder="Enter your address" cols="30" rows="10"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        let form = document.getElementById('form')
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            let fName = event.target.fName.value
+            let email = event.target.email.value 
+            let password = event.target.password.value 
+            let country = event.target.country.value 
+            let address = event.target.country.value
+
+            let info = {
+            FullName: fName,
+            Email: email,
+            Password: password,
+            Country: country,
+            Address: address
+        }
+        console.log(info)
+        })
+
+        
+    </script>
+</body>
+</html>
